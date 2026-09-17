@@ -1,0 +1,36 @@
+theme = light:Adwaita,dark:Adwaita Dark
+window-decoration = none
+window-show-tab-bar = never
+window-padding-x = 8
+window-padding-y = 8
+
+# auto-install Ghostty's terminfo on remote hosts over SSH (fixes
+# "unknown terminal type" errors like on Black), falling back to
+# TERM=xterm-256color if installation isn't possible
+shell-integration-features = ssh-terminfo,ssh-env
+
+# vim-inspired split controls: Ctrl+Alt+hjkl creates a split in that
+# direction, Shift+Alt+hjkl moves focus to the split in that direction
+keybind = ctrl+alt+h=new_split:left
+keybind = ctrl+alt+j=new_split:down
+keybind = ctrl+alt+k=new_split:up
+keybind = ctrl+alt+l=new_split:right
+keybind = shift+alt+h=goto_split:left
+keybind = shift+alt+j=goto_split:down
+keybind = shift+alt+k=goto_split:up
+keybind = shift+alt+l=goto_split:right
+
+# vim-inspired scrollback "normal mode" (enter with Shift+Alt+N, exit with Escape or i)
+keybind = shift+alt+n=activate_key_table:scroll
+keybind = scroll/j=scroll_page_lines:1
+keybind = scroll/k=scroll_page_lines:-1
+keybind = scroll/d=scroll_page_fractional:0.5
+keybind = scroll/u=scroll_page_fractional:-0.5
+keybind = scroll/f=scroll_page_down
+keybind = scroll/b=scroll_page_up
+keybind = scroll/g>g=scroll_to_top
+keybind = scroll/shift+g=scroll_to_bottom
+keybind = scroll/[=jump_to_prompt:-1
+keybind = scroll/]=jump_to_prompt:1
+keybind = scroll/escape=deactivate_key_table
+keybind = scroll/i=deactivate_key_table
