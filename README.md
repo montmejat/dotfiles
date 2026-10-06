@@ -14,7 +14,8 @@ git clone git@github.com:montmejat/dotfiles.git ~/dotfiles
 ```
 
 This symlinks every file under `home/` into place, backing up any existing
-file at that path as `<file>.bak` first.
+file at that path as `<file>.bak` first. It also enables `force_color_prompt`
+in Ubuntu's default `~/.bashrc` so the prompt is colored under Ghostty.
 
 ## Adding a new config
 

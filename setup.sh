@@ -24,3 +24,12 @@ find "$src_root" -type f | while read -r src; do
   ln -s "$src" "$dest"
   echo "Linked $dest -> $src"
 done
+
+# Ubuntu's default ~/.bashrc only colors the prompt for TERM=*-256color, which
+# misses Ghostty's xterm-ghostty; uncomment its built-in override instead of
+# managing the whole file. Ubuntu only.
+if grep -q '^ID=ubuntu$' /etc/os-release 2>/dev/null \
+  && [ -f "$HOME/.bashrc" ] && grep -q '^#force_color_prompt=yes$' "$HOME/.bashrc"; then
+  sed -i 's/^#force_color_prompt=yes$/force_color_prompt=yes/' "$HOME/.bashrc"
+  echo "Enabled force_color_prompt in $HOME/.bashrc"
+fi
